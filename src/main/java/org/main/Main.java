@@ -10,7 +10,6 @@ public class Main {
         String memberID, name;
         int age;
 
-        List<Member> member = new ArrayList<>();
         LibraryService ls = new LibraryService();
 
         Scanner scan = new Scanner(System.in);
@@ -31,22 +30,34 @@ public class Main {
 
             switch (option) {
                 case 1:
-                    System.out.println("Enter member ID: ");
+                    System.out.print("Enter member ID: ");
                     memberID = scan.nextLine();
-                    System.out.println("Enter name: ");
+                    System.out.print("\nEnter name: ");
                     name = scan.nextLine();
-                    System.out.println("Enter age: ");
+                    System.out.print("\nEnter age: ");
                     age = Integer.parseInt(scan.nextLine());
-                    ls.addMember(new Member(memberID, name, age));
+                    Member member = new Member(memberID, name, age);
+                    ls.addMember(member);
                     System.out.println("Member added successfully\n");
                     break;
                 case 2:
-                    ls.displayAllDetails();
+                    try {
+                        ls.displayAllDetails();
+                    } catch (Exception e) {
+                        System.out.println("There's nothing to display!");
+                    }
                     break;
                 case 3:
-
+                    System.out.print("Enter member ID to search: ");
+                    String tempId = scan.nextLine();
+                    if (ls.findMemberById(tempId) != null) {
+                        System.out.println("Member ID: " + tempId);
+                    } else {
+                        System.out.println("Not found!");
+                    }
                     break;
                 case 4:
+
                     break;
                 case 5:
                     in = false;
