@@ -32,9 +32,4 @@ public class Member {
         }
         System.out.println("\n");
     }
-
-    public void showMember() {
-
-    }
-
 }

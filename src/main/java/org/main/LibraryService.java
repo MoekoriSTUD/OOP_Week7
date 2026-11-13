@@ -32,15 +32,41 @@ public class LibraryService {
         return null;
     }
 
-    public void displayAllDetails() {
+    public void showMember(String id) {
         for (Member m : members) {
-            System.out.println("Member ID: " + m.getMemberId());
-            System.out.println("Name: " + m.getName());
-            System.out.println("Age: " + m.getAge());
-            for (int i = 0; i < 10; i++) {
-                System.out.print("-");
+            if (m.getMemberId().equalsIgnoreCase(id)) {
+                System.out.println("\n");
+                for (int i = 0; i < 10; i++) {
+                    System.out.print("-");
+                }
+                System.out.println("\nMember ID: " + m.getMemberId());
+                System.out.println("Name: " + m.getName());
+                System.out.println("Age: " + m.getAge());
+                for (int i = 0; i < 10; i++) {
+                    System.out.print("-");
+                }
+                System.out.println("\n");
             }
-            System.out.println("\n");
+        }
+    }
+
+    public void displayAllDetails() {
+        int counter = 0;
+        if (members.isEmpty()){
+            System.out.println("\nThere's nothing to display. Try adding members first!\n");
+        } else {
+            for (Member m : members) {
+                System.out.println("\n");
+                for (int i = 0; i < 10; i++) {
+                    System.out.print("-");
+                }
+                System.out.println("\nMember ID: " + m.getMemberId());
+                System.out.println("Name: " + m.getName());
+                System.out.println("Age: " + m.getAge());
+                for (int i = 0; i < 10; i++) {
+                    System.out.print("-");
+                }
+            }
         }
     }
 }

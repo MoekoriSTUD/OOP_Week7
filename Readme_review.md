@@ -31,19 +31,26 @@ why it works now.
 2. I started implementing an array list in the same file as the main code and at the end I decided to separate it into
    a LibraryService class. Which is a big one because it took some more extra time AND while doing this I either forgot
    how to use an array list out of a different class, or got confused and messed up the code.
-3. 
+3. I added everything that was missing (task 2, 3) and I set up a proper LibraryService. Now every single feature 
+   is implemented and working as it's supposed to. 
 
 ## 3. Reflection
 
 **What did you understand during the examination
 but struggle to implement?**
+The system to store and manage members. I got confused and I forgot how to work with classes, in addition I wasn't sure
+what parts need to be inside of main, and what parts should be in a separate file.
 
 **What was the most important thing you learned
 from correcting your code?**
+To correct my code I had to revise everything I did in class, so after doing, so I basically remembered everything I was
+missing. So the most important thing I think was just using classes in general.
 
 **What would you do differently in your next
 coding test?**
-
+I would definitely study more beforehand... That would give me more certainty in what should I do next. And I would
+start with implementing features first, and only when everything's working I will add a better look to it with UI, so
+I don't waste time on adding UI to something that isn't working at all.
 ---
 
 ## Review lab assessment and mark recovery
