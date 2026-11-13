@@ -2,9 +2,9 @@ package org.main;
 import java.util.ArrayList;
 
 public class Member {
-    private String memberId;
-    private String name;
-    private int age;
+    private final String memberId;
+    private final String name;
+    private final int age;
 
     public Member(String memberId, String name, int age) {
         this.memberId = memberId;
@@ -32,5 +32,4 @@ public class Member {
         }
         System.out.println("\n");
     }
-
 }
