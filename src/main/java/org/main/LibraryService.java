@@ -1,0 +1,72 @@
+package org.main;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class LibraryService {
+    private final List<Member> members = new ArrayList<>();
+
+    public void addMember(Member member) {
+        if (member == null) {
+            throw new IllegalArgumentException("Member must not be null");
+        }
+
+        members.add(member);
+    }
+
+    public boolean removeMember(String id) {
+        Member member = findMemberById(id);
+        if (member == null) {
+            return false;
+        }
+        members.remove(member);
+        return true;
+    }
+
+    public Member findMemberById(String id) {
+        for (Member member : members) {
+            if (member.getMemberId().equalsIgnoreCase(id)) {
+                return member;
+            }
+        }
+        return null;
+    }
+
+    public void showMember(String id) {
+        for (Member m : members) {
+            if (m.getMemberId().equalsIgnoreCase(id)) {
+                System.out.println("\n");
+                for (int i = 0; i < 10; i++) {
+                    System.out.print("-");
+                }
+                System.out.println("\nMember ID: " + m.getMemberId());
+                System.out.println("Name: " + m.getName());
+                System.out.println("Age: " + m.getAge());
+                for (int i = 0; i < 10; i++) {
+                    System.out.print("-");
+                }
+                System.out.println("\n");
+            }
+        }
+    }
+
+    public void displayAllDetails() {
+        int counter = 0;
+        if (members.isEmpty()){
+            System.out.println("\nThere's nothing to display. Try adding members first!\n");
+        } else {
+            for (Member m : members) {
+                System.out.println("\n");
+                for (int i = 0; i < 10; i++) {
+                    System.out.print("-");
+                }
+                System.out.println("\nMember ID: " + m.getMemberId());
+                System.out.println("Name: " + m.getName());
+                System.out.println("Age: " + m.getAge());
+                for (int i = 0; i < 10; i++) {
+                    System.out.print("-");
+                }
+            }
+        }
+    }
+}
